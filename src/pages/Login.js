@@ -1,87 +1,144 @@
-import { Button, TextField, Grid } from '@material-ui/core';
-import Link from '@material-ui/core/Link';
+import {
+    Button,
+    TextField,
+    Grid,
+    CssBaseline,
+    Link,
+    Typography,
+    Container,
+    Avatar,
+    makeStyles,
+} from '@material-ui/core';
+import { LockOutlined } from '@material-ui/icons'
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 
-function Copyright(){
-    return(
-        <Typography variant="body1" color="textSecondary" alignItems="center">
-            <Link color="inherit" href="https://mater-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}    
-        </Typography>
-    );
-}
-
-// const useStyles = makeStyles((theme) =>({
-//     parper: {
-//         marginTop:
-//     }
-// }));
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+}));
 
 export default function Login() {
-    
+
+    const classes = useStyles()
+
     return (
-            <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
+        <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div className={classes.paper}>
+                <Avatar className={classes.avatar}>
+                    <LockOutlined />
+                </Avatar>
                 <Typography component="h1" variant="h5">
-                    Login
+                    Sign in
                 </Typography>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-                <Grid item xs={12}/>
-
-                <Grid item xs={12}>
-                    <TextField 
-                    id="email" 
-                    label="Email" 
-                    variant="outlined" 
-                    fullWidth
+                <form className={classes.form} noValidate>
+                    <TextField
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="email"
+                        label="Email Address"
+                        name="email"
+                        autoComplete="email"
+                        autoFocus
                     />
-                </Grid>
-                
-                <Grid item xs={12}>
-                    <TextField 
-                    id="password" 
-                    label="Password" 
-                    variant="outlined" 
-                    fullWidth
+                    <TextField
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        name="password"
+                        label="Password"
+                        type="password"
+                        id="password"
+                        autoComplete="current-password"
                     />
-                </Grid>
-                <Grid item xs={12}>
-                    <Button variant="contained" color="primary" fullWidth>
-                    Login 
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}
+                    >
+                        Sign In
                     </Button>
-                </Grid>
+                </form>
+            </div>
+        </Container>
+            // <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Typography component="h1" variant="h5">
+            //         Login
+            //     </Typography>
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
+            //     <Grid item xs={12} />
 
-                <Grid container>
-                    <Grid item xs>
-                        <Link href="#" varaint="body2">
-                            Forgot password?
-                        </Link>
-                    </Grid>
-                </Grid>
+            //     <Grid item xs={12}>
+            //         <TextField
+            //         id="email" 
+            //         label="Email" 
+            //         variant="outlined" 
+            //         fullWidth
+            //         />
+            //     </Grid>
+
+            //     <Grid item xs={12}>
+            //         <TextField 
+            //         id="password" 
+            //         label="Password" 
+            //         variant="outlined" 
+            //         fullWidth
+            //         />
+            //     </Grid>
+            //     <Grid item xs={12}>
+            //         <Button variant="contained" color="primary" fullWidth>
+            //         Login 
+            //         </Button>
+            //     </Grid>
+
+            //     <Grid container>
+            //         <Grid item xs>
+            //             <Link href="#" varaint="body2">
+            //                 Forgot password?
+            //             </Link>
+            //         </Grid>
+            //     </Grid>
 
 
-            </Grid> 
+            // </Grid> 
             );
 }
 
