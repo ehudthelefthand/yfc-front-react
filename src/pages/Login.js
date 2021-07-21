@@ -38,7 +38,6 @@ export default function Login() {
 
     return (
         <Container component="main" maxWidth="xs">
-            <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
                     <LockOutlined />
@@ -81,65 +80,7 @@ export default function Login() {
                 </form>
             </div>
         </Container>
-            // <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Typography component="h1" variant="h5">
-            //         Login
-            //     </Typography>
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-            //     <Grid item xs={12} />
-
-            //     <Grid item xs={12}>
-            //         <TextField
-            //         id="email" 
-            //         label="Email" 
-            //         variant="outlined" 
-            //         fullWidth
-            //         />
-            //     </Grid>
-
-            //     <Grid item xs={12}>
-            //         <TextField 
-            //         id="password" 
-            //         label="Password" 
-            //         variant="outlined" 
-            //         fullWidth
-            //         />
-            //     </Grid>
-            //     <Grid item xs={12}>
-            //         <Button variant="contained" color="primary" fullWidth>
-            //         Login 
-            //         </Button>
-            //     </Grid>
-
-            //     <Grid container>
-            //         <Grid item xs>
-            //             <Link href="#" varaint="body2">
-            //                 Forgot password?
-            //             </Link>
-            //         </Grid>
-            //     </Grid>
-
-
-            // </Grid> 
-            );
+    );
 }
 
 
