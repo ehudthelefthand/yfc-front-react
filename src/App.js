@@ -1,26 +1,39 @@
-import Login from './pages/Login';
-import Give from './pages/Give';
-import Supporter from './pages/Supporter';
-import Receipt from './pages/Receipt';
-import { CssBaseline } from '@material-ui/core';
-import reactDom from 'react-dom';
+
+
 import React from 'react';
-import './App.css';
-import { Router } from 'express';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom'
+import { CssBaseline } from '@material-ui/core';
+import Login from './pages/Login'
+import Give from './pages/Give'
+import Receipt from './pages/Receipt'
+import Supporter from './pages/Supporter'
 
 function App() {
     return (
         <React.Fragment>
             <CssBaseline />
-                <Router path='/Give'>
-                    Give
-                </Router>
-                <Router path='/'>
-                    Login
-                </Router>
+            <Router>
+                <Switch>
+                    <Route path="/give">
+                        <Give />
+                    </Route>
+                    <Route path="/receipt">
+                        <Receipt />
+                    </Route>
+                    <Route path="/supporter">
+                        <Supporter />
+                    </Route>
+                    <Route path="/">
+                        <Login /> 
+                    </Route>
+                </Switch>
+            </Router>
         </React.Fragment>
-
     )
 }
 
-export default App;
+export default App

@@ -1,13 +1,12 @@
-import { Button,
-        TextField,
-        Typography,
-        Container,
-        Avatar,       
-        FormControlLabel,
-        Checkbox,
-    } from '@material-ui/core';
-
-import { makeStyles } from '@material-ui/core/styles';
+import {
+    Button,
+    TextField,
+    Typography,
+    Container,
+    Avatar,
+    makeStyles,
+} from '@material-ui/core';
+import { LockOutlined } from '@material-ui/icons'
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    avater: {
+    avatar: {
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%',
+        width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -31,16 +30,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
-    const classes = useStyles();
+
+    const classes = useStyles()
 
     return (
-            <Container component="main" maxWidth="xs">
-                <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                    
-                    </Avatar>
+        <Container component="main" maxWidth="xs">
+            <div className={classes.paper}>
+                <Avatar className={classes.avatar}>
+                    <LockOutlined />
+                </Avatar>
                 <Typography component="h1" variant="h5">
-                    Login
+                    Sign in
                 </Typography>
                 <form className={classes.form} noValidate>
                     <TextField
@@ -65,10 +65,6 @@ export default function Login() {
                         id="password"
                         autoComplete="current-password"
                     />
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                     />
                     <Button
                         type="submit"
                         fullWidth
@@ -76,12 +72,12 @@ export default function Login() {
                         color="primary"
                         className={classes.submit}
                     >
-                        Login
+                        Sign In
                     </Button>
                 </form>
-                </div>
-            </Container>
-            );
+            </div>
+        </Container>
+    );
 }
 
 
