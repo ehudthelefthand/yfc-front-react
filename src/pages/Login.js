@@ -1,32 +1,14 @@
 import { Button,
         TextField,
-        Grid,
-        Link,
         Typography,
         Container,
-        Avatar,
-        ThemeProvider,
-        CssBaseline,        
+        Avatar,       
         FormControlLabel,
         Checkbox,
-        Icon,
     } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-
-// function Copyright() {
-//     return (
-//       <Typography variant="body2" color="textSecondary" align="center">
-//         {'Copyright © '}
-//         <Link color="inherit" href="#">
-//           Your Website
-//         </Link>{' '}
-//         {new Date().getFullYear()}
-//         {'.'}
-//       </Typography>
-//     );
-//   }
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -53,10 +35,9 @@ export default function Login() {
 
     return (
             <Container component="main" maxWidth="xs">
-                <CssBaseline/>
                 <div className={classes.paper}>
                     <Avatar className={classes.avatar}>
-                        <Icon></Icon>
+                    
                     </Avatar>
                 <Typography component="h1" variant="h5">
                     Login
@@ -97,77 +78,9 @@ export default function Login() {
                     >
                         Login
                     </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
+                </form>
                 </div>
             </Container>
-
-
-
-            // <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Typography component="h1" variant="h5">
-            //         Login
-            //     </Typography>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-            //     <Grid item xs={12}/>
-
-            //     <Grid item xs={12}>
-            //         <TextField 
-            //         id="email" 
-            //         label="Email" 
-            //         variant="outlined" 
-            //         fullWidth
-            //         />
-            //     </Grid>
-                
-            //     <Grid item xs={12}>
-            //         <TextField 
-            //         id="password" 
-            //         label="Password" 
-            //         variant="outlined" 
-            //         fullWidth
-            //         />
-            //     </Grid>
-            //     <Grid item xs={12}>
-            //         <Button variant="contained" color="primary" fullWidth>
-            //         Login 
-            //         </Button>
-            //     </Grid>
-
-            //     <Grid container>
-            //         <Grid item xs>
-            //             <Link href="#" varaint="body2">
-            //                 Forgot password?
-            //             </Link>
-            //         </Grid>
-            //     </Grid>
-
-
-            // </Grid> 
             );
 }
 
