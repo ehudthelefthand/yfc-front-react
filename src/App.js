@@ -16,9 +16,6 @@ function App() {
             <CssBaseline />
             <Router>
                 <Switch>
-                    <Route path="/">
-                        <Give />
-                    </Route>
                     <Route path="/receipt">
                         <Receipt />
                     </Route>
@@ -27,6 +24,9 @@ function App() {
                     </Route>
                     <Route path="/login">
                         <Login /> 
+                    </Route>
+                    <Route path="/">
+                        <Give />
                     </Route>
                 </Switch>
             </Router>

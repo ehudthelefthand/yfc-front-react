@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import clsx from 'clsx'
 import { 
     AppBar,
     Toolbar,
@@ -6,22 +7,56 @@ import {
     Button,
     Typography,
     makeStyles,
+    Drawer,
 } from '@material-ui/core'
 import {
     Menu as MenuIcon,
     ExitToApp as ExitToAppIcon,
 } from '@material-ui/icons'
-import clsx from 'clsx'
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
-    menuButton: {
-        marginRight: theme.spacing(4)  
+    root: {
+        display: 'flex'
     },
+
+    toolbar: {
+        paddingRight: 24,
+    },
+
+    toolbarIcon: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: '0 8px' 
+    },
+
+    appBar: {
+        zIndex: theme.zIndex.drawer + 1,
+        transition: theme.transitions.create(['width', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+    },
+
+    appBarShift: {
+        marginLeft: drawerWidth,
+        width: `calc(100% - ${drawerWidth}px)`,
+        transition: theme.transitions.create(['width', 'margin'], {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.enteringScreen,
+        }),
+      },
+
+    menuButton: {
+        marginRight: theme.spacing(4)
+    },
+
     menuButtonHidden: {
         display: 'none'
     },
+
     title: {
         flexGrow: 1,
     },
@@ -29,10 +64,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function Give() {
-
-    const [open, setOpen] = useState(false)
-    const classes = useStyles()
-
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    
     const handleDrawerOpen = () => {
         setOpen(false)
     }
@@ -62,6 +96,11 @@ export default function Give() {
                     </Button>
                 </Toolbar>
             </AppBar>
+            <Drawer>
+                <div>
+
+                </div>
+            </Drawer>
         </div>
     )
 }

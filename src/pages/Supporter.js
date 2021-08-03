@@ -12,7 +12,7 @@ import { makeStyles,
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: theme.palette.common.black,
+        backgroundColor: theme.palette.common.bule,
         color: theme.palette.common.white,
     },
     body: {
@@ -30,14 +30,14 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles({
     table: {
-     minWidth: 700,
+     minWidth: 250,
     },
 })
 
 const rows = [
-    createData('0001', 'ผู้ถวายคนที่ 1', '00000000'),
-    createData('0002', 'ผู้ถวายคนที่่ 2', '00000000'),
-    createData('0003', 'ผู้ถวายคนที่่ 3', '00000000'),
+    createData('0001', 'ผู้ถวายคนที่ 1', 400),
+    createData('0002', 'ผู้ถวายคนที่่ 2', 1000),
+    createData('0003', 'ผู้ถวายคนที่่ 3', 500),
 ];
 
 function createData(code_ID, Fullname, Phone){
