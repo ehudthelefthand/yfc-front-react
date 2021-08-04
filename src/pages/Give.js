@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import {mainListItems} from './templates/listItems'
+import {mainListItems, secondaryListItems} from './templates/listItems'
 import { 
     AppBar,
     Toolbar,
@@ -33,7 +33,8 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-end',
-      padding: '0 8px' 
+      padding: '0 8px',
+      ...theme.mixins.toolbar,
     },
 
     appBar: {
@@ -51,7 +52,7 @@ const useStyles = makeStyles(theme => ({
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.enteringScreen,
         }),
-      },
+    },
 
     menuButton: {
         marginRight: theme.spacing(4)
@@ -64,28 +65,51 @@ const useStyles = makeStyles(theme => ({
     title: {
         flexGrow: 1,
     },
-    
-}))
+
+    drawerPaper: {
+        position: 'relative',
+        whiteSpace: 'nowrap',
+        width: drawerWidth,
+        transition: theme.transitions.create('width', {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.enteringScreen,
+        }),
+    },
+
+    drawerPaperClose: {
+        overflowX: 'hidden',
+        transition: theme.transitions.create('width', {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.leavingScreen,
+        }),
+        width: theme.spacing(7),
+        [theme.breakpoints.up('sm')]: {
+          width: theme.spacing(9),
+        },
+    },
+
+}));
 
 export default function Give() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     
     const handleDrawerOpen = () => {
-        setOpen(false)
-    }
-
-    const handleDrawerClose = () => {
         setOpen(true)
     }
 
+    const handleDrawerClose = () => {
+        setOpen(false)
+    }
+
     return (
-        <div>
-            <AppBar>
-                <Toolbar>
+        <div className={classes.root}>
+            <AppBar className={clsx(classes.appBar, open && classes.appBarShift)}>
+                <Toolbar className={classes.toolbar}>
                     <IconButton
                         color="inherit"
                         edge="start"
+                        aria-label="open drawer"
                         className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
                         onClick={handleDrawerOpen}
                     >
@@ -100,7 +124,13 @@ export default function Give() {
                     </Button>
                 </Toolbar>
             </AppBar>
-            <Drawer>
+            <Drawer
+                variant="permanent" 
+                classes={{
+                    paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+                }}
+                open={open}
+            >
                 <div className={classes.toolbarIcon}>
                     <IconButton onClick={handleDrawerClose}>
                         <ChevronLeft/>
@@ -109,7 +139,7 @@ export default function Give() {
                 <Divider />
                 <List> {mainListItems} </List>
                 <Divider/>
-
+                <List> {secondaryListItems} </List>
             </Drawer>
         </div>
     )
