@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
+import {mainListItems} from './templates/listItems'
 import { 
     AppBar,
     Toolbar,
@@ -8,10 +9,13 @@ import {
     Typography,
     makeStyles,
     Drawer,
+    List,
+    Divider,
 } from '@material-ui/core'
 import {
     Menu as MenuIcon,
     ExitToApp as ExitToAppIcon,
+    ChevronLeft,
 } from '@material-ui/icons'
 
 const drawerWidth = 240;
@@ -97,9 +101,15 @@ export default function Give() {
                 </Toolbar>
             </AppBar>
             <Drawer>
-                <div>
-
+                <div className={classes.toolbarIcon}>
+                    <IconButton onClick={handleDrawerClose}>
+                        <ChevronLeft/>
+                    </IconButton>
                 </div>
+                <Divider />
+                <List> {mainListItems} </List>
+                <Divider/>
+
             </Drawer>
         </div>
     )
