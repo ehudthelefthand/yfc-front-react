@@ -7,8 +7,13 @@ import {
 import { CssBaseline } from '@material-ui/core';
 import Login from './pages/Login'
 import Give from './pages/Give'
+import GiveType from './pages/GiveType'
 import Receipt from './pages/Receipt'
 import Supporter from './pages/Supporter'
+import Staff from './pages/Staff'
+import Department from './pages/Department'
+import PaymentType from './pages/PaymentType'
+import Dashboard from './pages/Dashboard'
 
 function App() {
     return (
@@ -16,6 +21,9 @@ function App() {
             <CssBaseline />
             <Router>
                 <Switch>
+                <Route path="/staff">
+                        <Staff />
+                    </Route>
                     <Route path="/receipt">
                         <Receipt />
                     </Route>
@@ -24,6 +32,18 @@ function App() {
                     </Route>
                     <Route path="/login">
                         <Login /> 
+                    </Route>
+                    <Route path="/paymenttype">
+                        <PaymentType />
+                    </Route>
+                    <Route path="/department">
+                        <Department />
+                    </Route>
+                    <Route path="/givetype">
+                        <GiveType />
+                    </Route>
+                    <Route path="/dashboard">
+                        <Dashboard />
                     </Route>
                     <Route path="/">
                         <Give />

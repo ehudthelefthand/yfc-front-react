@@ -3,69 +3,109 @@ import React from 'react'
 import { ListItemIcon,
          ListItem,
          ListItemText,
-         ListSubheader,
 } from '@material-ui/core'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import PeopleIcon from '@material-ui/icons/People'
-import BarChartIcon from '@material-ui/icons/BarChart'
-import LayersIcon from '@material-ui/icons/Layers'
-import AssignmentIcon from '@material-ui/icons/Assignment'
+import GroupWorkIcon from '@material-ui/icons/GroupWork'
+import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
+import ReceiptIcon from '@material-ui/icons/Receipt'
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
+import PaymentIcon from '@material-ui/icons/Payment'
+import VpnKeyIcon from '@material-ui/icons/VpnKey'
+
+function ListItemLink(props){
+    return <ListItem button component="a" {...props}/>;
+}
 
 export const mainListItems = (
-    <div>
+
+    <div class="root">
         <ListItem button>
             <ListItemIcon>
-                <Dashboard/>
+                <MonetizationOnIcon/>
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary="Give" />
         </ListItem>
-        <ListItem button>
+
+        <ListItemLink href="/receipt">
             <ListItemIcon>
-                <ShoppingCartIcon/>
+                <ReceiptIcon/>
             </ListItemIcon>
-            <ListItemText primary="Orders" />
-        </ListItem>
-        <ListItem button>
+            <ListItemText primary="Receipt" />
+        </ListItemLink>
+
+        <ListItemLink href="/department">
             <ListItemIcon>
-                <PeopleIcon />
+                <GroupWorkIcon/>
             </ListItemIcon>
-            <ListItemText primary="Customers" />
-        </ListItem>
-        <ListItem button>
+            <ListItemText primary="Department" />
+        </ListItemLink>
+
+        <ListItemLink href="/staff">
             <ListItemIcon>
-                <BarChartIcon />
+                <PeopleIcon/>
             </ListItemIcon>
-            <ListItemText primary="Reports" />
-        </ListItem>
-        <ListItem button>
+            <ListItemText primary="Staff" />
+        </ListItemLink>
+
+        <ListItemLink href="/supporter">
             <ListItemIcon>
-            <   LayersIcon />
+                <HelpOutlineIcon/>
             </ListItemIcon>
-            <ListItemText primary="Integrations" />
-        </ListItem>
+            <ListItemText primary="Supporter" />
+        </ListItemLink>
+
+        <ListItemLink href="/paymenttype">
+            <ListItemIcon>
+                <PaymentIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Payment Type" />
+        </ListItemLink>
+
+        <ListItemLink href="/givetype">
+            <ListItemIcon>
+                <CardGiftcardIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Give Type" />
+        </ListItemLink>
+
+        <ListItemLink href="/login">
+            <ListItemIcon>
+                <VpnKeyIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Login" />
+        </ListItemLink>
+
+        <ListItemLink href="/dashboard">
+            <ListItemIcon>
+                <Dashboard />
+            </ListItemIcon>
+            <ListItemText primary="Dashborad" />
+        </ListItemLink>
+
     </div>
 );
 
-export const secondaryListItems = (
-    <div>
-        <ListSubheader inset> Svaed Reports </ListSubheader>
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Current Month" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-             <ListItemText primary="Year-end sale" />
-        </ListItem>
-    </div>
-);
+// export const secondaryListItems = (
+//     <div>
+//         <ListSubheader inset> Svaed Reports </ListSubheader>
+//         <ListItem button>
+//             <ListItemIcon>
+//                 <AssignmentIcon />
+//             </ListItemIcon>
+//             <ListItemText primary="Current Month" />
+//         </ListItem>
+//         <ListItem button>
+//             <ListItemIcon>
+//                 <AssignmentIcon />
+//             </ListItemIcon>
+//             <ListItemText primary="Last quarter" />
+//         </ListItem>
+//         <ListItem button>
+//             <ListItemIcon>
+//                 <AssignmentIcon />
+//             </ListItemIcon>
+//              <ListItemText primary="Year-end sale" />
+//         </ListItem>
+//     </div>
+// );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import {mainListItems, secondaryListItems} from './templates/listItems'
+import {mainListItems} from './templates/listItems'
 import { 
     AppBar,
     Toolbar,
@@ -22,9 +22,10 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     root: {
-        display: 'flex'
+        display: 'flex',
+        Height:'100%'
     },
-
+  
     toolbar: {
         paddingRight: 24,
     },
@@ -118,7 +119,7 @@ export default function Give() {
                     <Typography component="h1" variant="h6" color="inherit" className={classes.title}>Give</Typography>
                     <Button
                         color="inherit"
-                        startIcon={<ExitToAppIcon />}
+                        tartIcon={<ExitToAppIcon />}
                     >
                         logout
                     </Button>
@@ -138,9 +139,9 @@ export default function Give() {
                 </div>
                 <Divider />
                 <List> {mainListItems} </List>
-                <Divider/>
-                <List> {secondaryListItems} </List>
+                
             </Drawer>
         </div>
+
     )
 }
