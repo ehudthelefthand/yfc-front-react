@@ -19,7 +19,7 @@ function ListItemLink(props){
 
 export const mainListItems = (
 
-    <div class="root">
+    <div>
         <ListItem button>
             <ListItemIcon>
                 <MonetizationOnIcon/>
