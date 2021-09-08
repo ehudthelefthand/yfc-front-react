@@ -101,8 +101,7 @@ const useStyles = makeStyles(theme => ({
     appBarSpacer: theme.mixins.toolbar,
 
     container: {
-        paddingTop: theme.spacing(4),
-        paddingBottom: theme.spacing(4),
+        padding: theme.spacing(2),
     },
 }));
 
@@ -158,7 +157,7 @@ export default function Give() {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={3}>
+                    <Grid container spacing={3} >
                         <Grid item xs={12} md={8} lg={9}>
                             <Paper>Hello</Paper>
                         </Grid>
