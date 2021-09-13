@@ -20,12 +20,12 @@ function ListItemLink(props){
 export const mainListItems = (
 
     <div>
-        <ListItem button>
+        <ListItemLink href="/give">
             <ListItemIcon>
                 <MonetizationOnIcon/>
             </ListItemIcon>
             <ListItemText primary="Give" />
-        </ListItem>
+        </ListItemLink>
 
         <ListItemLink href="/receipt">
             <ListItemIcon>
