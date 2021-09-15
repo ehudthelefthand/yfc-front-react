@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import {mainListItems} from './templates/listItems'
+import { useTranslation } from 'react-i18next'
+import { mainListItems } from './templates/listItems'
 import { 
     AppBar,
     Toolbar,
@@ -14,6 +15,7 @@ import {
     Container,
     Grid,
     Paper,
+    TextField,
 } from '@material-ui/core'
 import {
     Menu as MenuIcon,
@@ -106,8 +108,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Give() {
-    const classes = useStyles();
-    const [open, setOpen] = useState(false);
+    const classes = useStyles()
+    const [open, setOpen] = useState(false)
+    const { t } = useTranslation()
     
     const handleDrawerOpen = () => {
         setOpen(true)
@@ -157,14 +160,10 @@ export default function Give() {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={3} >
-                        <Grid item xs={12} md={8} lg={9}>
-                            <Paper>Hello</Paper>
-                        </Grid>
-                        <Grid item xs={12} md={4} lg={3}>
-                            <Paper>World</Paper>
-                        </Grid>
-                    </Grid>
+                    <TextField 
+                        label={t('givePage.form.amount')}
+                        type="text"
+                    />
                 </Container>
             </main>
         </div>
