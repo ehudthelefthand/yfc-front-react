@@ -6,7 +6,8 @@ const resources = {
         translation: {
             givePage: {
                 form: {
-                    amount: 'จำนวนเงิน'
+                    amount: 'จำนวนเงิน',
+                    baht: '฿',
                 }
             }
         }

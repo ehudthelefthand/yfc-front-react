@@ -16,6 +16,10 @@ import {
     Grid,
     Paper,
     TextField,
+    FormControl,
+    InputLabel,
+    OutlinedInput,
+    InputAdornment,
 } from '@material-ui/core'
 import {
     Menu as MenuIcon,
@@ -111,6 +115,10 @@ export default function Give() {
     const classes = useStyles()
     const [open, setOpen] = useState(false)
     const { t } = useTranslation()
+    const [ data, setData ] = useState({
+        amount: 0,
+        paymentOptions: 'transfer'
+    })
     
     const handleDrawerOpen = () => {
         setOpen(true)
@@ -118,6 +126,10 @@ export default function Give() {
 
     const handleDrawerClose = () => {
         setOpen(false)
+    }
+
+    const handleChange = (element) => (e) => {
+        setData({ [element]: e.target.value })
     }
 
     return (
@@ -160,10 +172,17 @@ export default function Give() {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
-                    <TextField 
-                        label={t('givePage.form.amount')}
-                        type="text"
-                    />
+                    <FormControl fullWidth className={classes.margin} variant="outlined">
+                        <InputLabel htmlFor="outlined-adornment-amount">{t('givePage.form.amount')}</InputLabel>
+                        <OutlinedInput
+                            id="outlined-adornment-amount"
+                            value={data.amount}
+                            onChange={handleChange('amount')}
+                            startAdornment={<InputAdornment position="start">{t('givePage.form.baht')}</InputAdornment>}
+                            labelWidth={60}
+                        />
+                    </FormControl>
+                    
                 </Container>
             </main>
         </div>
