@@ -4,10 +4,16 @@ import { initReactI18next } from 'react-i18next'
 const resources = {
     th: {
         translation: {
+            appHeader: {
+                give: 'เงินถวาย'
+            },
             givePage: {
                 form: {
                     amount: 'จำนวนเงิน',
                     baht: '฿',
+                    paymentType: 'ช่องทางการถวาย',
+                    transfer: 'โอนเงิน',
+                    cheque: 'เช็ค',
                 }
             }
         }
