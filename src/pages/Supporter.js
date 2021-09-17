@@ -13,14 +13,16 @@ import { AppBar,
          Container,
          Grid,
          Paper,
-         withStyles,
          TableContainer,
          Table,
-         TableCell,
          TableHead,
          TableRow,
          TableBody,
+    
 } from '@material-ui/core'
+
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import { styled } from '@material-ui/styles'
 
 import {
     Menu as MenuIcon,
@@ -116,26 +118,39 @@ const useStyles = makeStyles(theme => ({
         minWidth: 250,
        },
 
+    tablebody: {
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+        marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(1),
+    },
+
 }));
 
 /** Table Style */
-const StyledTableCell = withStyles((theme) => ({
-    head: {
-        backgroundColor: theme.palette.common.bule,
-        color: theme.palette.common.white,
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
     },
-    body: {
-        fontSize: 14,
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
     },
-}))(TableCell);
+  }));
 
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
     },
-}))(TableRow);
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
+
+function createData(code_ID, Fullname, Phone){
+    return { code_ID, Fullname, Phone};
+}
 
 const rows = [
     createData('0001', 'ผู้ถวายคนที่ 1', 400),
@@ -143,9 +158,7 @@ const rows = [
     createData('0003', 'ผู้ถวายคนที่่ 3', 500),
 ];
 
-function createData(code_ID, Fullname, Phone){
-    return { code_ID, Fullname, Phone};
-}
+
 
 export default function Supporter() {
     const classes = useStyles();
@@ -200,28 +213,32 @@ export default function Supporter() {
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
+                        <Grid item xs= {8} > 
+                            <Button variant="contained" color="inherit">
+                                Contained
+                            </Button>
+                        </Grid>
+
                         <TableContainer component={Paper}>
-                        <Table className={classes.table} aria-label="simple table">
+                        <Table className={classes.table} aria-label="customized table">
                             <TableHead>
-                                <StyledTableRow>
-                                    <StyledTableCell> Staff ID </StyledTableCell>
+                                <TableRow>
+                                    <StyledTableCell align="center"> Staff ID </StyledTableCell>
                                     <StyledTableCell align="center"> Full Name </StyledTableCell>
                                     <StyledTableCell align="center"> Phone Number </StyledTableCell>
-                                </StyledTableRow>
+                                </TableRow>
                             </TableHead>
-                        <TableBody>
+                            <TableBody >
                                 {rows.map((row) => (
-                        <StyledTableRow key={row.code_ID}>
-                            <StyledTableCell component="th" scope="row">
-                                {row.code_ID}
-                            </StyledTableCell>
-                            <StyledTableCell align="center"> {row.Fullname} </StyledTableCell>
-                            <StyledTableCell align="center"> {row.Phone} </StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-               </TableBody>
-            </Table>
-        </TableContainer>
+                                    <StyledTableRow key={row.code_ID}>
+                                        <StyledTableCell scope="row" align="center"> {row.code_ID} </StyledTableCell>
+                                        <StyledTableCell align="center"> {row.Fullname} </StyledTableCell>
+                                        <StyledTableCell align="center"> {row.Phone} </StyledTableCell>
+                                    </StyledTableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                        </TableContainer>
     
                     </Grid>
                 </Container>
