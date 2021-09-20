@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
+import { useTranslation } from 'react-i18next'
 import {mainListItems} from './templates/listItems'
 import { AppBar,
          Toolbar,
@@ -124,6 +125,10 @@ const useStyles = makeStyles(theme => ({
         marginRight: theme.spacing(1),
         marginLeft: theme.spacing(1),
     },
+    botton: {
+        padding: 0,
+        marginBottom: 8
+    },
 
 }));
 
@@ -153,9 +158,9 @@ function createData(code_ID, Fullname, Phone){
 }
 
 const rows = [
-    createData('0001', 'ผู้ถวายคนที่ 1', 400),
-    createData('0002', 'ผู้ถวายคนที่่ 2', 1000),
-    createData('0003', 'ผู้ถวายคนที่่ 3', 500),
+    createData('0001', 'ผู้ถวายคนที่ 1', '060-xxxxxxx'),
+    createData('0002', 'ผู้ถวายคนที่่ 2', '061-xxxxxxx'),
+    createData('0003', 'ผู้ถวายคนที่่ 3', '062-xxxxxxx'),
 ];
 
 
@@ -163,6 +168,7 @@ const rows = [
 export default function Supporter() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    const { t } = useTranslation()
     
     const handleDrawerOpen = () => {
         setOpen(true)
@@ -213,19 +219,18 @@ export default function Supporter() {
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
-                        <Grid item xs= {8} > 
-                            <Button variant="contained" color="inherit">
-                                Contained
+                        
+                            <Button className={classes.botton} variant="contained" color="inherit">
+                                {t('supporterPage.from.addfiles')}
                             </Button>
-                        </Grid>
-
+                      
                         <TableContainer component={Paper}>
                         <Table className={classes.table} aria-label="customized table">
                             <TableHead>
                                 <TableRow>
-                                    <StyledTableCell align="center"> Staff ID </StyledTableCell>
-                                    <StyledTableCell align="center"> Full Name </StyledTableCell>
-                                    <StyledTableCell align="center"> Phone Number </StyledTableCell>
+                                    <StyledTableCell align="center"> รหัส </StyledTableCell>
+                                    <StyledTableCell align="center"> ชื่อผู้ถวาย </StyledTableCell>
+                                    <StyledTableCell align="center"> เบอร์โทรศัพท์ </StyledTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody >

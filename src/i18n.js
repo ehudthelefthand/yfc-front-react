@@ -15,7 +15,12 @@ const resources = {
                     transfer: 'โอนเงิน',
                     cheque: 'เช็ค',
                 }
-            }
+            },
+            supporterPage: {
+                from: {
+                    addfiles: 'เพิ่มไฟล์',
+                }
+            },
         }
     },
 }
