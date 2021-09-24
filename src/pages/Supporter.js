@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
-import {mainListItems} from '../layouts/ListItem'
+import {MainListItems} from './templates/ListItems'
+
 import { AppBar,
          Toolbar,
          IconButton,
@@ -214,7 +215,7 @@ export default function Supporter() {
                     </IconButton>
                 </div>
                 <Divider />
-                <List> {mainListItems} </List>
+                <List> {MainListItems} </List>
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}></div>

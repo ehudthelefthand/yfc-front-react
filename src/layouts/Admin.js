@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import {mainListItems} from './templates/listItems'
+import { MainListItems } from './templates/ListItems'
 import { 
     AppBar,
     Toolbar,
@@ -153,7 +153,7 @@ export default function Admin({ children }) {
                     </IconButton>
                 </div>
                 <Divider />
-                <List> {mainListItems} </List>
+                <List> {MainListItems} </List>
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}></div>
