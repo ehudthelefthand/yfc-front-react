@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
-import {mainListItems} from './templates/listItems'
+import {mainListItems} from '../layouts/ListItem'
 import { AppBar,
          Toolbar,
          IconButton,
@@ -22,7 +22,7 @@ import { AppBar,
     
 } from '@material-ui/core'
 
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import { styled } from '@material-ui/styles'
 
 import {
@@ -126,8 +126,9 @@ const useStyles = makeStyles(theme => ({
         marginLeft: theme.spacing(1),
     },
     botton: {
-        padding: 0,
-        marginBottom: 8
+        marginBottom: 12,
+        marginLeft: 8,
+        
     },
 
 }));
@@ -219,11 +220,9 @@ export default function Supporter() {
                 <div className={classes.appBarSpacer}></div>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
-                        
-                            <Button className={classes.botton} variant="contained" color="inherit">
-                                {t('supporterPage.from.addfiles')}
+                            <Button className={classes.botton} variant="contained" size="medium">
+                                {t('supporterPage.form.addfiles')}
                             </Button>
-                      
                         <TableContainer component={Paper}>
                         <Table className={classes.table} aria-label="customized table">
                             <TableHead>

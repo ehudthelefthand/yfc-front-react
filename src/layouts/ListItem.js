@@ -14,7 +14,7 @@ import PaymentIcon from '@material-ui/icons/Payment'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
 
 function ListItemLink(props){
-    return <ListItem button component="a" {...props}/>;
+    return <ListItem button {...props}/>;
 }
 
 export const mainListItems = (

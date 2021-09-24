@@ -17,7 +17,7 @@ const resources = {
                 }
             },
             supporterPage: {
-                from: {
+                form: {
                     addfiles: 'เพิ่มไฟล์',
                 }
             },

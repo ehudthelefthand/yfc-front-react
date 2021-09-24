@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
-import { mainListItems } from './templates/listItems'
+import { mainListItems } from '../layouts/ListItem'
 import {
     AppBar,
     Toolbar,
