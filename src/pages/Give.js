@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import {mainListItems, secondaryListItems} from './templates/listItems'
+import { MainListItems, SecondaryListItems } from './templates/ListItems'
 import { 
     AppBar,
     Toolbar,
@@ -137,9 +137,9 @@ export default function Give() {
                     </IconButton>
                 </div>
                 <Divider />
-                <List> {mainListItems} </List>
+                <List> {MainListItems} </List>
                 <Divider/>
-                <List> {secondaryListItems} </List>
+                <List> {SecondaryListItems} </List>
             </Drawer>
         </div>
     )
