@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { MainListItems } from './templates/ListItems'
-import { 
+import {
     AppBar,
     Toolbar,
     IconButton,
     Button,
     Typography,
-    makeStyles,
     Drawer,
     List,
     Divider,
     Container,
     Grid,
     Paper,
-} from '@material-ui/core'
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import {
     Menu as MenuIcon,
     ExitToApp as ExitToAppIcon,
     ChevronLeft,
-} from '@material-ui/icons'
+} from '@mui/icons-material'
 
 const drawerWidth = 240;
 
@@ -128,7 +128,7 @@ export default function Admin({ children }) {
                         aria-label="open drawer"
                         className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
                         onClick={handleDrawerOpen}
-                    >
+                        size="large">
                         <MenuIcon />
                     </IconButton>
                     <Typography component="h1" variant="h6" color="inherit" className={classes.title}>Give</Typography>
@@ -148,10 +148,10 @@ export default function Admin({ children }) {
                 open={open}
             >
                 <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton onClick={handleDrawerClose} size="large">
                         <ChevronLeft/>
                     </IconButton>
-                </div>
+                </div> 
                 <Divider />
                 <List> {MainListItems} </List>
             </Drawer>
@@ -162,6 +162,5 @@ export default function Admin({ children }) {
                 </Container>
             </main>
         </div>
-
-    )
+    );
 }

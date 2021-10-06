@@ -1,27 +1,24 @@
-import { Dashboard } from '@material-ui/icons'
+import { Dashboard } from '@mui/icons-material'
 import React from 'react'
 import { ListItemIcon,
          ListItem,
          ListItemText,
-} from '@material-ui/core'
-import PeopleIcon from '@material-ui/icons/People'
-import GroupWorkIcon from '@material-ui/icons/GroupWork'
-import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
-import ReceiptIcon from '@material-ui/icons/Receipt'
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
-import PaymentIcon from '@material-ui/icons/Payment'
-import VpnKeyIcon from '@material-ui/icons/VpnKey'
+} from '@mui/material'
+import PeopleIcon from '@mui/icons-material/People'
+import GroupWorkIcon from '@mui/icons-material/GroupWork'
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
+import ReceiptIcon from '@mui/icons-material/Receipt'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import PaymentIcon from '@mui/icons-material/Payment'
+import VpnKeyIcon from '@mui/icons-material/VpnKey'
 
 
 function ListItemLink(props){
     return <ListItem button {...props}/>;
 }
 
-function ListItemLink(props) {
-    return <ListItem {...props}/>
-
-}
+export const MainListItems = (
 
 export const MainListItems = (
     <div>

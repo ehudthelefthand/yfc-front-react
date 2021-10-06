@@ -4,7 +4,11 @@ import {
     Switch,
     Route
 } from 'react-router-dom'
-import { createTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { 
+    createTheme, 
+    CssBaseline, 
+    ThemeProvider 
+} from '@mui/material';
 import Login from './pages/Login'
 import Give from './pages/Give'
 import GiveType from './pages/GiveType'
@@ -14,6 +18,7 @@ import Staff from './pages/Staff'
 import Department from './pages/Department'
 import PaymentType from './pages/PaymentType'
 import Dashboard from './pages/Dashboard'
+
 
 
 const theme = createTheme({
@@ -32,7 +37,7 @@ function App() {
                 <CssBaseline />
                 <Router>
                     <Switch>
-                    <Route path="/staff">
+                        <Route path="/staff">
                             <Staff />
                         </Route>
                         <Route path="/receipt">
@@ -63,7 +68,7 @@ function App() {
                 </Router>
             </React.Fragment>
         </ThemeProvider>
-    )
+    );
 }
 
 export default App
