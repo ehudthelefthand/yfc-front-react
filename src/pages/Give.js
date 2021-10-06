@@ -40,7 +40,11 @@ export default function Give() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography flexGrow={1} variant="h6">
+                    <Typography 
+                        variant="h6"
+                        sx={{ flexGrow: 1 }} 
+                        component="div"
+                    >
                         { t('appHeader.give') }
                     </Typography>
                     <IconButton color="inherit">
